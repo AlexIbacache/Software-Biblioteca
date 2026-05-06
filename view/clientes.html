@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="libros.html">Libros</a>
+        <a href="reservas.html">Reservas</a>
+    </nav>
+
+    <header>
+        <img src="/img/logo.png" alt="Logo" class="logo">
+        <h1>Registro de Clientes</h1>
+    </header>
+
+    <form onsubmit="event.preventDefault(); crearCliente();">
+        <input id="nombre" placeholder="Nombre" required>
+        <input id="rut" placeholder="RUT" required pattern="^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$"
+            oninput="formatearRUT(this)" title="Formato válido: 12.345.678-9 o 1.234.567-K">
+        <input type="email" id="correo" placeholder="Correo" required>
+        <input type="tel" id="telefono" placeholder="Telefono" required pattern="[0-9]+"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '')" title="Solo números">
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h2>Lista de Clientes</h2>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>RUT</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaClientes">
+
+        </tbody>
+
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

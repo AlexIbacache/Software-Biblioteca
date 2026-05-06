@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas</title>
+    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="libros.html">Libros</a>
+        <a href="reservas.html">Reservas</a>
+    </nav>
+
+    <header>
+        <img src="/img/logo.png" alt="Logo" class="logo">
+        <h1>Reserva de Libros</h1>
+    </header>
+
+    <form onsubmit="event.preventDefault(); crearReserva();">
+        <select id="cliente_id" required>
+            <option value="">Seleccione Cliente...</option>
+        </select>
+        <select id="libro_id" required>
+            <option value="">Seleccione Libro...</option>
+        </select>
+        <input type="date" id="fecha_reserva" placeholder="Fecha Reserva" required>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <ul id="listaReservas"></ul>
+
+    <script src="script.js"></script>
+
+    <h2>Lista de Reservas</h2>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente ID</th>
+                <th>Libro ID</th>
+                <th>Fecha Reserva</th>
+                <th>Fecha Devolución</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaReservas">
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
